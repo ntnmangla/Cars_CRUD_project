@@ -23,6 +23,7 @@ class Carcontroller extends Controller
     }
     // a method that shows all the car
     public function show(){
+        //Demo testing
         $cars=Car::all();
         return view('index',['cars'=>$cars]);
 
