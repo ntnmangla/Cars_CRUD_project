@@ -14,11 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[
-    'uses'=>'Carcontroller@show',
-    'as'=> 'cars.show'
+    'uses'=>'Carcontroller@index',
+    'as'=> 'cars.index'
 ]);
 Route::post('/create',[
     'uses'=>'Carcontroller@create',
     'as'=>'cars.create'
 ]);
-
+Route::get('/cars/{car}/edit',[
+    'uses'=>'Carcontroller@edit',
+    'as'=>'cars.edit'
+]);
+Route::post('/cars/$car',[
+    'cars'=>'Carcontroller@update',
+    'as'=>'cars.update'
+]);
+Route::delete('/cars/{car}',[
+    'uses'=>'Carcontroller@destroy',
+    'as'=>'cars.delete'
+]);
