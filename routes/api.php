@@ -17,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+/*
 Route ::get('country','country\CountryController@Country');
 Route ::get('country/{id}','Country\CountryController@CountryById');
 Route ::post('country','Country\CountryController@CountrySave');
 Route ::put('country/{id}','Country\CountryController@CountryUpdate');
 Route ::delete('country/{id}',"Country\CountryController@CountryDelete");
+*/
+
+Route ::apiResource('country','Country\country');
